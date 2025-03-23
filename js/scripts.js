@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Document is ready');
 
+    // Cart functionality
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     function addToCart(productName) {
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Add to cart button handlers
     const addToCartButtons = document.querySelectorAll('button');
     addToCartButtons.forEach(button => {
         if (!button.id || button.id !== 'checkout-button') {
@@ -28,51 +30,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    const cartElement = document.createElement('div');
-    cartElement.id = 'cart-display';
-    cartElement.style.position = 'fixed';
-    cartElement.style.top = '10px';
-    cartElement.style.right = '10px';
-    cartElement.style.backgroundColor = '#fff';
-    cartElement.style.border = '1px solid #ccc';
-    cartElement.style.padding = '10px';
-    cartElement.innerHTML = `Coș: ${cart.length} produse`;
-    document.body.appendChild(cartElement);
-
-    const cartItemsContainer = document.getElementById('cart-items');
-    if (cartItemsContainer) {
-        cart.forEach(item => {
-            const itemElement = document.createElement('div');
-            itemElement.className = 'cart-item';
-            itemElement.innerText = item;
-            cartItemsContainer.appendChild(itemElement);
-        });
-    }
-
-    const checkoutButton = document.getElementById('checkout-button');
-    if (checkoutButton) {
-        checkoutButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Funcționalitatea de finalizare comandă nu este încă implementată.');
-        });
-    }
-
-    // Prevent double-tap zoom on iOS
-    document.addEventListener('touchend', function(e) {
-        e.preventDefault();
-    }, { passive: false });
-
-    // Update the navigation click handler
+    // Navigation handlers
     const navLinks = document.querySelectorAll('nav ul li a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default navigation
-            
-            // Remove active class from all links
-            navLinks.forEach(l => l.classList.remove('active'));
-            
-            // Add active class to clicked link
-            this.classList.add('active');
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                event.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
         });
     });
+
+    // Initialize cart display
+    updateCartDisplay();
 });
