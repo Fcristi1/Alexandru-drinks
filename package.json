@@ -1,0 +1,14 @@
+{
+  "name": "alexandru-drinks",
+  "version": "1.0.0",
+  "description": "A website for selling alcoholic beverages and homemade jams.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "http-server ./src"
+  },
+  "author": "fcp1",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
