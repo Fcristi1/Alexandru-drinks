@@ -34,14 +34,14 @@ header {
 
 .navbar ul {
     display: flex;
-    flex-direction: column; /* Stack items vertically on mobile */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
 .navbar li {
-    width: 100%;
+    width: 33.33%; /* Each item takes up one-third of the row */
     text-align: center;
     padding: 10px 0;
 }
@@ -155,6 +155,10 @@ footer {
 @media (min-width: 768px) {
     .navbar ul {
         flex-direction: row; /* Stack items horizontally on larger screens */
+    }
+
+    .navbar li {
+        width: auto; /* Reset width for larger screens */
     }
 }
 
