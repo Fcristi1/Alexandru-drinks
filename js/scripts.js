@@ -26,12 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
         updateBasketPage();
     }
 
-    document.querySelector('.reset-basket').addEventListener('click', function() {
-        localStorage.removeItem('basket');
-        basket = [];
-        updateBasketPage();
-        updateBasketNotification();
-    });
+    const resetButton = document.querySelector('.reset-basket');
+    if (resetButton) {
+        resetButton.addEventListener('click', function() {
+            localStorage.removeItem('basket');
+            basket = [];
+            updateBasketPage();
+            updateBasketNotification();
+        });
+    }
 
     updateBasketNotification();
 });
