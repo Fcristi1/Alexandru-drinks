@@ -2,12 +2,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Document is ready');
 
-    // Initialize an empty cart
-    let cart = [];
+    // Initialize the cart from localStorage or as an empty array
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     // Function to add a product to the cart
     function addToCart(productName) {
         cart.push(productName);
+        localStorage.setItem('cart', JSON.stringify(cart));
         alert(`${productName} has been added to your cart.`);
         updateCartDisplay();
     }
@@ -15,7 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to update the cart display
     function updateCartDisplay() {
         const cartDisplay = document.getElementById('cart-display');
-        cartDisplay.innerHTML = `Cart: ${cart.length} items`;
+        if (cartDisplay) {
+            cartDisplay.innerHTML = `Cart: ${cart.length} items`;
+        }
     }
 
     // Add event listeners to "Add to Cart" buttons
@@ -36,6 +39,25 @@ document.addEventListener('DOMContentLoaded', function() {
     cartElement.style.backgroundColor = '#fff';
     cartElement.style.border = '1px solid #ccc';
     cartElement.style.padding = '10px';
-    cartElement.innerHTML = 'Cart: 0 items';
+    cartElement.innerHTML = `Cart: ${cart.length} items`;
     document.body.appendChild(cartElement);
+
+    // Display cart items on the cart page
+    const cartItemsContainer = document.getElementById('cart-items');
+    if (cartItemsContainer) {
+        cart.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cart-item';
+            itemElement.innerText = item;
+            cartItemsContainer.appendChild(itemElement);
+        });
+    }
+
+    // Checkout button functionality
+    const checkoutButton = document.getElementById('checkout-button');
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', function() {
+            alert('Checkout functionality is not implemented yet.');
+        });
+    }
 });
