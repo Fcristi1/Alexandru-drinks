@@ -1,8 +1,15 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 header {
@@ -10,32 +17,75 @@ header {
     color: #fff;
     padding: 1rem 0;
     text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 1rem;
+    margin: 0.5rem;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:active {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 main {
-    padding: 2rem;
-    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .product {
     border: 1px solid #ccc;
     padding: 1rem;
-    margin: 1rem 0;
+    margin: 1rem auto;
+    max-width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+button {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #007AFF;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin: 10px 0;
+    touch-action: manipulation;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:active {
+    background-color: #0056b3;
 }
 
 footer {
@@ -44,6 +94,40 @@ footer {
     text-align: center;
     padding: 1rem 0;
     position: fixed;
-    width: 100%;
     bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+    
+    nav ul li a {
+        padding: 0.75rem;
+    }
+    
+    .product {
+        margin: 1rem 0;
+    }
+    
+    main {
+        padding-top: 180px;
+    }
+}
+
+#cart-display {
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1001;
 }
