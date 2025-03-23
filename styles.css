@@ -22,7 +22,7 @@ nav ul {
 
 nav ul li {
     margin: 0 15px;
-    position: relative; /* Add this line */
+    position: relative;
 }
 
 nav ul li a {
@@ -30,7 +30,7 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     display: flex;
-    align-items: center; /* Add this line */
+    align-items: center;
 }
 
 nav ul li a:hover {
@@ -82,6 +82,12 @@ p {
 .product-card p {
     font-size: 0.9em;
     color: #666;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #e44d26;
+    margin-top: 5px;
 }
 
 .product-card button {
@@ -137,4 +143,25 @@ footer {
     position: absolute;
     top: -8px;
     right: -8px;
+}
+
+.total {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.checkout-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.checkout-button:hover {
+    background-color: #367C39;
 }

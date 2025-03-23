@@ -7,10 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const productCard = button.parentElement;
             const productName = productCard.querySelector('h2').innerText;
             const productDescription = productCard.querySelector('p').innerText;
+            const productPrice = parseFloat(productCard.querySelector('.price').innerText.replace(' RON', ''));
 
             const product = {
                 name: productName,
-                description: productDescription
+                description: productDescription,
+                price: productPrice
             };
 
             basket.push(product);
@@ -39,6 +41,8 @@ function updateBasketPage() {
     const basketContainer = document.querySelector('.basket-container');
     basketContainer.innerHTML = '';
 
+    let totalPrice = 0;
+
     if (basket.length === 0) {
         basketContainer.innerHTML = '<p>Coșul este gol.</p>';
     } else {
@@ -48,10 +52,15 @@ function updateBasketPage() {
             productElement.innerHTML = `
                 <h2>${product.name}</h2>
                 <p>${product.description}</p>
+                <p class="price">${product.price} RON</p>
             `;
             basketContainer.appendChild(productElement);
+            totalPrice += product.price;
         });
     }
+
+    const totalPriceElement = document.querySelector('.total-price');
+    totalPriceElement.innerText = `${totalPrice} RON`;
 }
 
 function updateBasketNotification() {
