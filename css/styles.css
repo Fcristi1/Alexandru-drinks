@@ -32,6 +32,12 @@ main {
     text-align: center;
 }
 
+.product {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
 footer {
     background-color: #333;
     color: #fff;
