@@ -14,7 +14,7 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 5px 0; /* Reduced padding */
+    padding: 2px 0; /* Reduced padding further */
     text-align: center;
     position: fixed;
     top: 0;
@@ -28,8 +28,8 @@ nav ul {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
-    gap: 2px; /* Small gap between items */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
 }
 
 nav ul li {
@@ -41,23 +41,23 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 6px 4px; /* Reduced padding */
+    padding: 4px 2px; /* Reduced padding */
     display: block;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.1);
     transition: background-color 0.3s ease;
-    font-size: 0.9rem; /* Slightly smaller font */
-    white-space: nowrap; /* Prevent text wrapping */
+    font-size: 0.85rem; /* Smaller font */
+    min-width: fit-content; /* Ensure box fits content */
 }
 
 nav ul li a:active {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Adjust main content padding */
+/* Update main content padding */
 main {
-    padding-top: 80px; /* Reduced top padding */
-    padding-bottom: 60px;
+    padding-top: 60px; /* Reduced top padding */
+    padding-bottom: 40px; /* Reduced bottom padding */
     max-width: 1200px;
     margin: 0 auto;
     padding-left: 20px;
@@ -93,29 +93,30 @@ button:active {
     background-color: #0056b3;
 }
 
+/* Update footer styles */
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 0.5rem 0; /* Reduced padding */
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
+/* Remove the scrolling from header in mobile view */
 @media (max-width: 768px) {
     header {
-        max-height: 25vh;
-        overflow-y: auto;
+        max-height: none;
+        overflow-y: visible;
     }
     
     nav ul {
-        flex-wrap: wrap;
+        grid-template-columns: repeat(3, 1fr);
     }
     
     nav ul li {
-        width: 33.33%;
-        margin: 0;
+        width: 100%;
     }
     
     main {
