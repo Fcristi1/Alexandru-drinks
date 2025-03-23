@@ -14,13 +14,12 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 2px 0; /* Reduced padding further */
+    padding: 2px 0;
     text-align: center;
-    position: fixed;
-    top: 0;
     width: 100%;
     z-index: 1000;
     height: auto;
+    /* Removed position: fixed and top: 0 */
 }
 
 nav ul {
@@ -61,8 +60,8 @@ nav ul li a:active {
 
 /* Update main content padding */
 main {
-    padding-top: 60px; /* Reduced top padding */
-    padding-bottom: 40px; /* Reduced bottom padding */
+    padding-top: 10px; /* Reduced padding since header is not fixed anymore */
+    padding-bottom: 40px;
     max-width: 1200px;
     margin: 0 auto;
     padding-left: 20px;
@@ -125,7 +124,7 @@ footer {
     }
     
     main {
-        padding-top: 100px;
+        padding-top: 20px; /* Adjusted padding */
     }
 }
 
@@ -139,9 +138,10 @@ footer {
     }
 }
 
+/* Update cart display position */
 #cart-display {
     position: fixed;
-    top: 70px;
+    top: 10px; /* Adjusted from 70px */
     right: 10px;
     background-color: white;
     padding: 10px;
