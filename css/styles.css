@@ -14,7 +14,7 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 0.5rem 0;
+    padding: 5px 0; /* Reduced padding */
     text-align: center;
     position: fixed;
     top: 0;
@@ -27,33 +27,36 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+    gap: 2px; /* Small gap between items */
 }
 
 nav ul li {
-    width: 33.33%;
+    width: 100%;
     margin: 0;
-    padding: 2px;
+    padding: 0;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 8px;
+    padding: 6px 4px; /* Reduced padding */
     display: block;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.1);
     transition: background-color 0.3s ease;
+    font-size: 0.9rem; /* Slightly smaller font */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 nav ul li a:active {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Adjust main content padding */
 main {
-    padding-top: 120px;
+    padding-top: 80px; /* Reduced top padding */
     padding-bottom: 60px;
     max-width: 1200px;
     margin: 0 auto;
