@@ -29,7 +29,7 @@ nav ul {
     margin: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
+    gap: 2px; /* Slightly increased gap */
 }
 
 nav ul li {
@@ -41,23 +41,22 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 4px 2px; /* Reduced padding */
+    padding: 8px 4px; /* Increased padding slightly */
     display: block;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease;
-    font-size: 0.85rem; /* Smaller font */
+    background-color: #333;
+    transition: background-color 0.2s ease;
+    font-size: 0.9rem;
     min-width: fit-content; /* Ensure box fits content */
 }
 
 nav ul li a:active,
 nav ul li a.active {
-    background-color: rgba(255, 255, 255, 0.3);
-    transform: scale(0.98);
+    background-color: #4a4a4a; /* Lighter color when clicked */
 }
 
 nav ul li a:active {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #4a4a4a;
 }
 
 /* Update main content padding */
