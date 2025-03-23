@@ -43,13 +43,13 @@ header {
 .navbar li {
     width: 33.33%; /* Each item takes up one-third of the row */
     text-align: center;
-    padding: 10px 0;
+    padding: 5px 0; /* Reduce padding to fit more items */
 }
 
 .navbar a {
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 5px; /* Reduce padding to fit more items */
     text-decoration: none;
     color: #fff; /* Adjust color as needed */
 }
