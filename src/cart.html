@@ -3,39 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexandru Drinks & Jams</title>
+    <title>Cart - Alexandru Drinks & Jams</title>
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/scripts.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Welcome to Alexandru Drinks & Jams</h1>
+        <h1>Cart</h1>
         <nav>
             <ul>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">Despre Mine</a></li>
                 <li><a href="location.html">Locatie</a></li>
                 <li><a href="alcohol.html">Alcool</a></li>
                 <li><a href="food-products.html">Produse Alimentare</a></li>
-                <li><a href="cart.html">Cart</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Our Products</h2>
-        <p>Discover our wide range of alcoholic beverages and delicious jams.</p>
-        <section>
-            <h3>Featured Products</h3>
-            <div class="product">
-                <h4>Red Wine</h4>
-                <p>A fine selection of red wine.</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <h4>Strawberry Jam</h4>
-                <p>Delicious homemade strawberry jam.</p>
-                <button>Add to Cart</button>
-            </div>
-        </section>
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <button id="checkout-button">Checkout</button>
     </main>
     <footer>
         <p>&copy; 2023 Alexandru Drinks & Jams</p>
