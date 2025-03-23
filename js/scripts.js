@@ -62,14 +62,17 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
     }, { passive: false });
 
-    const navLinks = document.querySelectorAll('.navbar a');
+    // Update the navigation click handler
+    const navLinks = document.querySelectorAll('nav ul li a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                event.preventDefault();
+                const targetElement = document.getElementById(targetId.substring(1));
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         });
     });

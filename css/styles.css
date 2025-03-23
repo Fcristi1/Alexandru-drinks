@@ -14,44 +14,13 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     text-align: center;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-}
-
-.navbar {
-    width: 100%;
-    height: auto; /* Ensure the height is auto to fit content */
-    position: fixed; /* Fix the position at the top */
-    top: 0;
-    left: 0;
-    z-index: 1000; /* Ensure it is above other content */
-    background-color: #333; /* Adjust background color as needed */
-}
-
-.navbar ul {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.navbar li {
-    width: 33.33%; /* Each item takes up one-third of the row */
-    text-align: center;
-    padding: 5px 0; /* Reduce padding to fit more items */
-}
-
-.navbar a {
-    display: block;
-    width: 100%;
-    padding: 5px; /* Reduce padding to fit more items */
-    text-decoration: none;
-    color: #fff; /* Adjust color as needed */
+    height: auto;
 }
 
 nav ul {
@@ -64,16 +33,18 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0.5rem;
+    width: 33.33%;
+    margin: 0;
+    padding: 2px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px;
     display: block;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
     transition: background-color 0.3s ease;
 }
 
@@ -130,35 +101,32 @@ footer {
 }
 
 @media (max-width: 768px) {
+    header {
+        max-height: 25vh;
+        overflow-y: auto;
+    }
+    
     nav ul {
-        flex-direction: column;
+        flex-wrap: wrap;
     }
     
     nav ul li {
-        width: 100%;
-        margin: 0.25rem 0;
-    }
-    
-    nav ul li a {
-        padding: 0.75rem;
-    }
-    
-    .product {
-        margin: 1rem 0;
+        width: 33.33%;
+        margin: 0;
     }
     
     main {
-        padding-top: 180px;
+        padding-top: 100px;
     }
 }
 
 @media (min-width: 768px) {
     .navbar ul {
-        flex-direction: row; /* Stack items horizontally on larger screens */
+        flex-direction: row;
     }
 
     .navbar li {
-        width: auto; /* Reset width for larger screens */
+        width: auto;
     }
 }
 
@@ -174,5 +142,5 @@ footer {
 }
 
 .content {
-    padding-top: 20px; /* Adjust padding to avoid overlap with fixed navbar */
+    padding-top: 20px;
 }
