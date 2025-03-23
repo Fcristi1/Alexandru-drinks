@@ -50,6 +50,12 @@ nav ul li a {
     min-width: fit-content; /* Ensure box fits content */
 }
 
+nav ul li a:active,
+nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(0.98);
+}
+
 nav ul li a:active {
     background-color: rgba(255, 255, 255, 0.2);
 }
