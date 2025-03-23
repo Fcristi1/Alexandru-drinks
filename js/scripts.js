@@ -24,15 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
         updateBasketPage();
     }
 
-    const resetButton = document.querySelector('.reset-basket');
-    if (resetButton) {
-        resetButton.addEventListener('click', function() {
-            localStorage.removeItem('basket');
-            basket = [];
-            updateBasketPage();
-            updateBasketNotification();
-        });
-    }
+    document.querySelector('.reset-basket').addEventListener('click', function() {
+        localStorage.removeItem('basket');
+        basket = [];
+        updateBasketPage();
+        updateBasketNotification();
+    });
 
     updateBasketNotification();
 });
@@ -59,8 +56,8 @@ function updateBasketPage() {
 
 function updateBasketNotification() {
     const basket = JSON.parse(localStorage.getItem('basket')) || [];
-    const basketNotification = document.querySelector('.basket-notification');
-    if (basketNotification) {
-        basketNotification.innerText = `Număr total de produse în coș: ${basket.length}`;
-    }
+    const basketNotifications = document.querySelectorAll('.basket-notification');
+    basketNotifications.forEach(notification => {
+        notification.innerText = basket.length;
+    });
 }

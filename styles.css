@@ -10,7 +10,6 @@ header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
-    position: relative;
 }
 
 nav ul {
@@ -23,28 +22,19 @@ nav ul {
 
 nav ul li {
     margin: 0 15px;
+    position: relative; /* Add this line */
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    position: relative;
+    display: flex;
+    align-items: center; /* Add this line */
 }
 
 nav ul li a:hover {
     text-decoration: underline;
-}
-
-.basket-notification {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 50%;
-    font-size: 0.8em;
 }
 
 main {
@@ -135,4 +125,16 @@ footer {
 
 .reset-basket:hover {
     background-color: #c0392b;
+}
+
+.basket-notification {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-size: 0.8em;
+    position: absolute;
+    top: -8px;
+    right: -8px;
 }
