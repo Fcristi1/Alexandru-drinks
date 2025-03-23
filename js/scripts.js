@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateCartSection() {
         const cartItems = document.getElementById('cart-items');
         const cartTotal = document.getElementById('cart-total');
-        
+
         if (cartItems) {
             cartItems.innerHTML = '';
             let total = 0;
@@ -84,14 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('nav ul li a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
-            const href = this.getAttribute('href');
-            if (href.startsWith('#')) {
-                event.preventDefault();
-                const targetId = href.substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
