@@ -104,3 +104,22 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+.basket-container {
+    margin-top: 20px;
+}
+
+.reset-basket {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+.reset-basket:hover {
+    background-color: #c0392b;
+}
