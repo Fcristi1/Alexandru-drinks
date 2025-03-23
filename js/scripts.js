@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const cartButtons = document.querySelectorAll('.add-to-cart');
-    const basket = JSON.parse(localStorage.getItem('basket')) || [];
+    let basket = JSON.parse(localStorage.getItem('basket')) || [];
 
     cartButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             basket.push(product);
             localStorage.setItem('basket', JSON.stringify(basket));
-            alert('Produsul a fost adăugat în coș!');
+            updateBasketNotification();
+            alert(`Produsul a fost adăugat în coș! Număr total de produse: ${basket.length}`);
         });
     });
 
@@ -25,8 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('.reset-basket').addEventListener('click', function() {
         localStorage.removeItem('basket');
+        basket = [];
         updateBasketPage();
+        updateBasketNotification();
     });
+
+    updateBasketNotification();
 });
 
 function updateBasketPage() {
@@ -46,5 +51,13 @@ function updateBasketPage() {
             `;
             basketContainer.appendChild(productElement);
         });
+    }
+}
+
+function updateBasketNotification() {
+    const basket = JSON.parse(localStorage.getItem('basket')) || [];
+    const basketNotification = document.querySelector('.basket-notification');
+    if (basketNotification) {
+        basketNotification.innerText = `Număr total de produse în coș: ${basket.length}`;
     }
 }
