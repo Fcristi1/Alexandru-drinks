@@ -171,5 +171,5 @@ footer {
 }
 
 .content {
-    padding-top: 60px; /* Adjust padding to avoid overlap with fixed navbar */
+    padding-top: 20px; /* Adjust padding to avoid overlap with fixed navbar */
 }
